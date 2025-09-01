@@ -1,0 +1,37 @@
+Questão 1
+Utilize uma ferramenta de IA Generativa para saber como o algoritmo de Ray Tracing calcula a cor de um pixel em uma imagem renderizada
+
+______________________________
+
+Prompt (zero-shot):
+Me explique como o algoritmo de Ray Tracing calcula a cor de um pixel em uma imagem renderizada.
+
+Resposta Gemini 2.5 Flash:
+O Ray Tracing, ou Traçado de Raios, é um poderoso algoritmo de renderização que simula o comportamento da luz para criar imagens 3D incrivelmente realistas. Ele calcula a cor de cada pixel de uma imagem, não de forma arbitrária, mas rastreando o caminho da luz.
+
+Vamos entender passo a passo como isso funciona:
+
+1. Lançamento do Raio
+O processo começa com o que se chama de raio primário. Para cada pixel na imagem final que está sendo gerada, um raio é lançado a partir da posição da câmera, passando por esse pixel, e projetado para dentro da cena 3D. A direção desse raio é o que determina a linha de visão para aquele pixel específico.
+
+2. Detecção de Intersecção
+Uma vez que o raio primário está no espaço 3D, o algoritmo verifica se ele colide com algum objeto da cena (como uma esfera, um plano ou um modelo 3D complexo). A matemática por trás disso envolve testes de intersecção, que determinam o ponto exato onde o raio atinge a superfície do objeto. Se o raio não colidir com nada, a cor do pixel é preenchida com a cor de fundo (geralmente preto ou azul para simular o céu).
+
+3. Sombra e Iluminação
+Se o raio primário colidir com um objeto, o algoritmo precisa determinar a iluminação nesse ponto de intersecção. Para isso, novos raios são lançados do ponto de intersecção em direção a cada fonte de luz na cena. Esses raios são chamados de raios de sombra.
+
+Se um raio de sombra atingir a fonte de luz sem ser bloqueado por nenhum outro objeto, a luz contribui para a cor final do pixel.
+
+Se o raio de sombra for bloqueado por outro objeto, significa que o ponto de intersecção está na sombra e, portanto, a contribuição daquela luz é nula.
+
+A quantidade de luz que atinge o ponto de intersecção também é influenciada pela normal da superfície (a direção para a qual a superfície aponta naquele ponto) e pela direção da luz. A cor do objeto e a intensidade da luz também são consideradas nesse cálculo.
+
+4. Reflexão e Refração
+Essa é a parte que torna o Ray Tracing tão realista. Se a superfície do objeto for reflexiva (como um espelho ou vidro), o algoritmo lança um novo raio a partir do ponto de intersecção em uma direção refletida. Esse é um raio secundário. O algoritmo então repete os passos anteriores para este novo raio, buscando intersecções e calculando a iluminação. A cor resultante desse raio refletido é então combinada com a cor do ponto de intersecção original.
+
+Da mesma forma, se a superfície for transparente (como um vidro ou água), um novo raio é lançado para dentro do objeto, mas a sua direção é alterada de acordo com as leis da refração (que explicam como a luz se dobra ao passar por diferentes meios). A cor resultante da refração também é levada em conta no cálculo final.
+
+5. Combinação Final
+Depois de todos esses cálculos — que podem incluir múltiplos raios para reflexão e refração, gerando uma "árvore" de raios — a cor final do pixel é determinada pela combinação de todas essas contribuições. O algoritmo leva em conta a iluminação direta (dos raios de sombra), a iluminação indireta (de reflexões e refrações) e a cor original da textura ou material do objeto.
+
+O resultado é uma cor final para o pixel que é a simulação mais precisa do que a luz faria no mundo real. E o processo é repetido para cada pixel da imagem, resultando em uma cena 3D com sombras suaves, reflexos realistas e refrações precisas, que parecem quase fotográficas.

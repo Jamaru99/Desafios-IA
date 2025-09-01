@@ -1,0 +1,36 @@
+Questão 2
+Utilize uma ferramenta de IA Generativa para obter uma resposta completa de como fazer a decomposição numérica de 142.981
+
+______________________________
+
+Prompt (chain of thought simples):
+Preciso fazer a decomposição numérica de 142.981
+Vamos fazer passo a passo
+
+Resposta Gemini 2.5 Flash:
+A decomposição do número 142.981 é a seguinte:
+
+142.981=1⋅100.000+4⋅10.000+2⋅1.000+9⋅100+8⋅10+1⋅1
+Vamos fazer o cálculo passo a passo, separando cada valor posicional:
+
+1 está na casa das centenas de milhar, então seu valor é 1
+cdot100.000=100.000.
+
+4 está na casa das dezenas de milhar, então seu valor é 4
+cdot10.000=40.000.
+
+2 está na casa das unidades de milhar, então seu valor é 2
+cdot1.000=2.000.
+
+9 está na casa das centenas, então seu valor é 9
+cdot100=900.
+
+8 está na casa das dezenas, então seu valor é 8
+cdot10=80.
+
+1 está na casa das unidades, então seu valor é 1
+cdot1=1.
+
+Somando todos os valores decompostos, obtemos o número original:
+
+100.000+40.000+2.000+900+80+1=142.981
